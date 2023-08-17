@@ -9,14 +9,12 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
     - [Usage ](#usage-)
     - [Run tests](#run-tests)
-    - [Deployment](#deployment)
   - [👥 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -62,11 +60,6 @@ The **Rails Blog App** is a blog website, that allows users to post, comment on 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- Coming soon
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -111,14 +104,6 @@ To run all tests, including unit and integration tests, run the following comman
 
 ```
   rails test:all
-```
-
-### Deployment
-
-You can deploy this project using:
-
-```
-  N/A
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
