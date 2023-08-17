@@ -32,7 +32,6 @@ RSpec.describe User, type: :model do
                           created_at: 2.days.ago)
       post4 = Post.create(author: user, title: 'Fourth Post', text: 'Hello', comments_counter: 0, likes_counter: 0,
                           created_at: 1.day.ago)
-
       expect(user.recent_posts).to eq([post4, post3, post2])
     end
   end
