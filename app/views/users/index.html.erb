@@ -1,1 +1,9 @@
-<p>The list of all users</p>
+
+<div class="users-list">
+  <% @users.each do |user| %>
+    <%= link_to user_path(user) do %>
+      <%= render 'shared/user', user: user %>
+    <% end %>
+  <% end %>
+</div>
+
