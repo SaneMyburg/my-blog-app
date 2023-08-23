@@ -35,11 +35,11 @@ body {
 .user-bio {
   margin-left: 20px;
   padding: 1.1em;
-  width: 90%;
+  width: 92.2%;
 }
 
 .post-details {
-  width: 90%;
+  width: 92.2%;
   padding: 1em;
   margin: 10px 20px;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 .user-comments {
-  width: 90%;
+  width: 92.2%;
   border: 2px solid rgb(27, 25, 25);
   margin: 0 20px;
   padding: 1em;
