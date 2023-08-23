@@ -15,6 +15,8 @@
   <p>No posts available.</p>
 <% end %>
 
+<%= link_to "Create New Post", new_user_post_path(@user) %>
+
 <% if @user.recent_posts.any? %>
   <div class="see-posts-btn">
     <%= link_to "See All Posts", user_posts_path(@user) %>
