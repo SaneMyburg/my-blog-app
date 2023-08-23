@@ -1,13 +1,10 @@
-<div class="post-details">
-  <h1><%= @post.title %></h1>
-  <p><%= @post.text %></p>
-  <div class="counters">
-    <p>Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %></p>
-  </div>
-<h2>Comments</h2>
+<%= render "shared/post", post: @post %>
 </div>
+<h2 class="m-3">Comments</h2>
 <div class="user-comments">
 <% @comments.each do |comment| %>
     <p><strong><%= comment.author.name %>:</strong> Comment:<%= comment.text %></p>
 <% end %>
 </div>
+<%= link_to "Add Comment", new_user_post_comment_path(@user, @post), class: "btn btn-primary m-3" %>
+<%= link_to "Like",  user_post_likes_path(@user, @post), method: :get, class: "btn btn-primary" %>
