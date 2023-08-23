@@ -1,6 +1,5 @@
 <%= render 'shared/user', user: @user %>
 <p class="user-bio"><%= @user.bio %></p>
-
 <% if @user.recent_posts.any? %>
   <% @user.recent_posts.each do |post| %>
     <div class="post-details">
@@ -15,7 +14,7 @@
   <p>No posts available.</p>
 <% end %>
 
-<%= link_to "Create New Post", new_user_post_path(@user) %>
+<%= link_to "Create New Post", new_user_post_path(@user), class: "m-3" %>
 
 <% if @user.recent_posts.any? %>
   <div class="see-posts-btn">
