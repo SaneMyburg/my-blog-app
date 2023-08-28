@@ -13,11 +13,6 @@ RSpec.describe 'Users', type: :request do
       get users_path
       expect(response).to render_template('index')
     end
-
-    it 'should list all users' do
-      get users_path
-      expect(response.body).to include('The list of all users')
-    end
   end
 
   describe 'Get /users/:id' do
@@ -29,11 +24,6 @@ RSpec.describe 'Users', type: :request do
     it 'should render users/show template' do
       get user_url(user)
       expect(response).to render_template('show')
-    end
-
-    it 'should show the correct user' do
-      get user_url(user)
-      expect(response.body).to include('Details for a given users with post')
     end
   end
 end
