@@ -1,6 +1,6 @@
 <div class="user-card">
   <div class="user-photo">
-    <%= image_tag user.photo %>
+    <%= image_tag (user.photo) if user.photo.present? %>
   </div>
   <div class="user-details">
     <h5><%= user.name %></h5>
