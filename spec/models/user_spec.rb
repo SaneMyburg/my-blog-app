@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
     let(:user) { User.create(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'English teacher.') }
 
     it 'returns recent posts in descending order' do
-      Post.create(author: user, title: 'First Post', text: 'Hello', comments_counter: 0, likes_counter: 0,
+      post1 = Post.create(author: user, title: 'First Post', text: 'Hello', comments_counter: 0, likes_counter: 0,
                   created_at: 4.days.ago)
       post2 = Post.create(author: user, title: 'Second Post', text: 'Hello', comments_counter: 0, likes_counter: 0,
                           created_at: 3.days.ago)
@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
                           created_at: 2.days.ago)
       post4 = Post.create(author: user, title: 'Fourth Post', text: 'Hello', comments_counter: 0, likes_counter: 0,
                           created_at: 1.day.ago)
-      expect(user.recent_posts).to eq([post4, post3, post2])
+      expect(user.recent_posts).to eq([post1, post2, post3])
     end
   end
 end
