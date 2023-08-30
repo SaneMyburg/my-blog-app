@@ -73,6 +73,7 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'devise'
-gem 'rails-controller-testing'
 gem 'cancancan'
+gem 'devise'
+gem 'jquery-rails'
+gem 'rails-controller-testing'
