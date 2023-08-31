@@ -3,7 +3,7 @@
     <%= image_tag (user.photo) if user.photo.present? %>
   </div>
   <div class="user-details">
-    <h5><%= link_to user.name,  users_path %></h5>
+    <h5><%= user.name %></h5>
     <p>Number of Posts: <%= user.posts_counter %></p>
   </div>
 </div>
