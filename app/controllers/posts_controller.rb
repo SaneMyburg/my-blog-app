@@ -30,9 +30,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.author
     if @post.destroy
-      redirect_to user_posts_path, notice: 'Post was successfully deleted.'
+      redirect_to user_path(@user), notice: 'Post was successfully deleted.'
     else
-      redirect_to user_posts_path, alert: 'Error deleting the post.'
+      redirect_to user_path(@user), alert: 'Error deleting the post.'
     end
   end
 
