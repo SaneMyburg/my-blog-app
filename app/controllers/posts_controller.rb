@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.author
     @comments = @post.recent_comments
+    @comment = Comment.new
   end
 
   def new
@@ -28,11 +29,10 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @user = @post.author
-    puts "Destroy action called"
     if @post.destroy
-      redirect_to user_posts_path, notice: "Post was successfully deleted."
+      redirect_to user_posts_path, notice: 'Post was successfully deleted.'
     else
-      redirect_to user_posts_path, alert: "Error deleting the post."
+      redirect_to user_posts_path, alert: 'Error deleting the post.'
     end
   end
 

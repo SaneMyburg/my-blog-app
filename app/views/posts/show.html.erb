@@ -2,9 +2,7 @@
   <%= render "shared/post", post: @post %>
 
   <% if can? :destroy, @post %>
-    <%= link_to "Delete Post", user_post_path(@user, @post), method: :delete, data: { "turbo-method": :delete, confirm: "Are you sure you want to delete this post?" }, class: "btn btn-danger" %>
-    <% else %>
-  <%= puts "Cannot destroy post" %>
+    <%= link_to "Delete Post", user_post_path(@user, @post), method: :delete, data: { "turbo-method": :delete }, class: "btn btn-danger" %>
   <% end %>
 </div>
 
@@ -13,6 +11,9 @@
   <div class="user-comments">
     <% @comments.each do |comment| %>
       <p><strong><%= comment.author.name %>:</strong> Comment:<%= comment.text %></p>
+       <% if can? :destroy, Comment %>
+      <%= link_to "Delete Comment", user_post_comment_path(@user, @post, comment), data: { "turbo-method": :delete }, method: :delete, class: 'btn btn-danger' %>
+    <% end %>
     <% end %>
   </div>
 </div>
