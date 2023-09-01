@@ -10,14 +10,20 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def create
-    token = request.headers['X-Token']
-    user = User.find_by(api_token: token)
+    user_id = params['user_id']
     post = Post.find(params['post_id'])
 
-    new_comment = Comment.new(
+    user = User.find(user_id)
+
+    if user.nil?
+      render json: { error: 'User not found' }, status: :not_found
+      return
+    end
+
+    new_comment = post.comments.new(
       text: params['text'],
-      author: user, # Set the author of the comment
-      post: # Associate the comment with the post
+      author: user,
+      post:
     )
 
     if new_comment.save
@@ -26,6 +32,6 @@ class Api::V1::CommentsController < ApplicationController
       render json: { error: new_comment.errors.full_messages }, status: :bad_request
     end
   rescue ActiveRecord::RecordNotFound
-    render json: { error: 'User or Post not found' }, status: :not_found
+    render json: { error: 'Post not found' }, status: :not_found
   end
 end
